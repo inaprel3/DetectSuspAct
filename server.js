@@ -69,11 +69,11 @@ async function createServer() {
 
   app.use(
     session({
-      key: "logshield",
-      secret: "sg809psargae9pr8gaertgheho9ar8g",
+      key: "detectsuspact",
+      secret: "sd869pgareay6hr6gherhgjeeo6ah8l",
       resave: false,
       saveUninitialized: true,
-      cookie: { maxAge: process.env.Session_Time * 60 * 1000 }, // 30 minutes
+      cookie: { maxAge: process.env.Session_Time * 60 * 1000 },
     })
   );
 
@@ -89,10 +89,6 @@ async function createServer() {
     require(`./api/${file}`)(router, client, checkAuth);
   });
 
-  ///////////////////////////////////////////////////////////////////////////////////////////////
-  // API
-  ///////////////////////////////////////////////////////////////////////////////////////////////
-
   app.use(
     rateLimit({
       limit: process.env.Max_Requests,
@@ -105,7 +101,6 @@ async function createServer() {
   app.use(verifyRouter);
   app.use(bandwidth);
 
-  // Proxy configuration
   const Difficulty = process.env.DIFFICULTY || 1;
 
   function checkAuth(req, res, next) {
