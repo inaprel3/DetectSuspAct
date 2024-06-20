@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LogShield</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script>
+    const Difficulty = "<%= Difficulty %>";
+    const secret = '<%= secret %>';
+    const userIp = '<%= userIp %>';
+  </script>
+  <script src="/client.js"></script>
+</head>
+
+<body>
+  <div class="header">
+    <img src="images/logo.png" alt="LogShield Logo" class="logo">
+    <h2>LogShield</h2>
+    <br>
+  </div>
+  <p>Checking your browser before accessing <span id="domain"></span><br>
+  <p style="font-size: 14px;">Ray ID: <%= sub %>
+  </p>
+  </p>
+  <div class="container">
+    <div class="column">
+      <img src="images/img1.png" alt="IP Image">
+      <p class="main">You</p>
+      <p class="sub">IP: <%= userIp %>
+      </p>
+    </div>
+    <img src="images/arrow.png" alt="Arrow" class="arrow">
+    <div class="column">
+      <img src="images/img2.png" alt="LogShield Image">
+      <p class="main">LogShield</p>
+      <p class="sub">Edge Network</p>
+    </div>
+    <img src="images/arrow.png" alt="Arrow" class="arrow">
+    <div class="column">
+      <img src="images/img3.png" alt="Destination Image">
+      <p id="destinationDomain" class="main"></p>
+      <p class="sub">Your destination</p>
+    </div>
+  </div>
+
+  <div class="footer centered-footer">
+    <p>DDOS Protected By LogShield</p>
+    <br>
+    <p>Calculating Ray: <span id="calculatingNonce">...</span></p>
+    <p>Submitting Result: <span id="submittingResult">...</span></p>
+    <p>Redirecting: <span id="redirecting">...</span></p>
+  </div>
+
+  <script>
+    document.getElementById("domain").textContent = window.location.hostname;
+    document.getElementById("destinationDomain").textContent = window.location.hostname;
+  </script>
+</body>
+
+</html>

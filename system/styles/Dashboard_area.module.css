@@ -1,0 +1,31 @@
+.dashboardArea {
+    width: 100%;
+    padding: 20px;
+}
+
+.card-row {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1cm;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1cm;
+}
+
+.progressBarContainer {
+    width: 100px;
+    height: 100px;
+}
+
+.cardContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,0 +1,14 @@
+[Unit]
+Description=AntiDDOS be Stasiia
+After=nginx.service
+Wants=nginx.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/etc/detectsuspact
+ExecStart=node . 2>&1 | tee -a /etc/detectsuspact/log/DetectSuspAct.log
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
